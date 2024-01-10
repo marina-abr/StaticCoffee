@@ -21,37 +21,11 @@
 		
 	
 		 	<div id='accountbar'><a href='#' onClick='displayLoginForm()'>Login</a></div>
-  	<!-- Overlay für den modalen Dialog -->
-	<div id="overlay" class="modaldialog">
-    	<div id="loginContainer">
-    	<h2>Login</h2>    	<form id="loginform" method="post" action="http://10.40.226.38:8080/Coffeeshop/login.php">
-        	<div class="login">
-                <div><input type="text" placeholder="Username" id="login-username" name="username" autocomplete="off"></div>
-                <div><span id="login-username-msg"></span></div>
-            </div>
-            <div class="login">
-            	                	<input type="password" placeholder="Passwort" id="login-password" name="password" autocomplete="new-password">
-                                <div><span id="login-password-msg"></span></div>                
-            </div>
-            <div class="login">
-                <input id="login-submit" type="button" onClick="checkLoginPassword()" value="Login">
-            </div>
-        </form>
-       		        	   <div class="login">Noch kein Account? <a href="register.html">Anmelden</a></div>
-               		
-        </div>
-    </div>
-    
-    <div id="loginentsperrt-overlay" class="modaldialog">
-	    <div id="overlaysubmit">
-		    <h2>Dein Account wurde erfolgreich entsperrt.</h2>
-		    <button type="button" class="button" onclick="javascript:displayLoginForm()">Login</button>
-	    </div>
-	</div>
+  	
          
     <script src="js/login.js"></script>    
     <script>   	
-   				function displayLoginForm() {
+   			function displayLoginForm() {
 			document.getElementById("loginentsperrt-overlay").style.display = "none";
 			document.getElementById("overlay").style.display = "block";
 							document.getElementById("login-username-msg").innerHTML = "";
@@ -75,6 +49,60 @@
 			<a class="topnavigation" href="#footer">Contact</a>
 		</nav>
 	</header>
+
+	<!-- Overlay für den modalen Dialog -->
+	<div id="overlay" class="modaldialog">
+		<div id="loginContainer">
+		<h2>Login</h2>    	<form id="loginform" method="post" action="http://10.40.226.38:8080/Coffeeshop/login.php">
+			<div class="login">
+				<div><input type="text" placeholder="Username" id="login-username" name="username" autocomplete="off"></div>
+				<div><span id="login-username-msg"></span></div>
+			</div>
+			<div class="login">
+									<input type="password" placeholder="Passwort" id="login-password" name="password" autocomplete="new-password">
+								<div><span id="login-password-msg"></span></div>                
+			</div>
+			<div class="login">
+				<input id="login-submit" type="button" onClick="checkLoginPassword()" value="Login">
+			</div>
+		</form>
+							<div class="login">Noch kein Account? <a href="register.html">Anmelden</a></div>
+					
+		</div>
+	</div>
+
+
+	<div id="modal-register" class="modaldialog">
+		<div>
+			<h2>Registrieren</h2>
+			<div class="errormsg"></div>
+			<form action="#" method="POST" name="form">
+				<div class="reg email">
+					<div><input type="text" placeholder="Username" class="form input" id="register-username" name="username" autocomplete="off" required="required" pattern="^[A-Za-z\d\u00d6\u00f6\u00c4\u00e4\u00dc\u00fc]{4,12}$" ></div>
+					<div><span class="errormsg" id=usrmsg></span></div>
+				</div>
+				<div class="reg pw">
+					<input type="password" placeholder="Passwort" class="form input" id="register-pw" name="pw" autocomplete="new-password" required="required" pattern="^[A-Za-z\d@$!%*?]{8,20}$" >
+					<div><span class="errormsg" id=pwmsg></span></div>
+				</div>
+				<div class="reg rpw">
+					<input type="password" placeholder="Passwort wiederholen" class="form input" id="register-pwrep" name="pwrep" autocomplete="new-password" required="required" pattern="^[A-Za-z\d@$!%*?]{8,20}$" >
+					<div><span class="errormsg" id=repwmsg></span></div>
+				</div>
+				<div class="reg agbcheck">
+					<label>
+						<input type="checkbox" id="register-check" required="required" >Ja, ich habe die <a href="agb.html" target="_blank" rel="noopener noreferrer">AGB</a> gelesen und akzeptiere diese. 
+					</label>
+					<div><span class="errormsg" id=agbmsg></span></div>
+				</div>
+				<div class="reg btn">
+					<input type="submit" class="button" value="Registrieren">
+				</div>
+			</form>  
+    	</div> 
+
+	</div>
+
 	<content>
 
  
