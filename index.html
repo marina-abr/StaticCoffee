@@ -27,10 +27,18 @@
 	// When the user clicks anywhere outside of the modal, close it
 	window.onclick = function(event) {
 	if (event.target == document.getElementById("overlay")) {
-								document.getElementById("login-username-msg").innerHTML = "";
-				document.getElementById("login-password-msg").innerHTML = "";
-				document.getElementById("loginform").reset();
-						document.getElementById("overlay").style.display = "none";	
+		document.getElementById("login-username-msg").innerHTML = "";
+		document.getElementById("login-password-msg").innerHTML = "";
+		document.getElementById("loginform").reset();
+		document.getElementById("overlay").style.display = "none";	
+	}
+	if (event.target == document.getElementById("modal-register")) {
+		document.getElementById("register-username").innerHTML = "";
+		document.getElementById("register-pw").innerHTML = "";
+		document.getElementById("register-pwrep").innerHTML = "";
+		
+		document.getElementById("regform").reset();
+		document.getElementById("modal-register").style.display = "none";	
 	}
 	}
 
@@ -89,7 +97,7 @@
 		<div id="containerRegister">
 			<h2>Registrieren</h2>
 			<div class="errormsg"></div>
-			<form action="#" method="POST" name="form">
+			<form id="regform" action="#" method="POST" name="form">
 				<div class="reg email">
 					<div><input type="text" placeholder="Username" class="form input" id="register-username" name="username" autocomplete="off" required="required" pattern="^[A-Za-z\d\u00d6\u00f6\u00c4\u00e4\u00dc\u00fc]{4,12}$" ></div>
 					<div><span class="errormsg" id=usrmsg></span></div>
