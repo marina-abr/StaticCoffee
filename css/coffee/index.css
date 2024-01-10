@@ -1,0 +1,149 @@
+.mpshopsection{
+	background-image: linear-gradient(0deg, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(../../img/coffee/mainpage_shoplink.jpg); 
+	background-position: 50% 50%; 
+	color: #ffffff;
+	background-size: cover;
+	background-repeat: no-repeat;
+	line-height: 1.6;
+	max-height: 500px;
+    max-width: 1000px;
+    margin: auto;
+}
+.mpshopdiv{
+	pointer-events: none;
+}
+.mpshoptitle{
+	text-transform: uppercase;
+    font-size: 5rem;
+    margin-left: 100px;
+	line-height: 1.1;
+	position: relative; 
+	font-family: Roboto,sans-serif;
+    margin-block-start: 1em;
+    margin-block-end: 0.35em;  
+}
+.mpshoptext{
+    font-size: 1.5rem;
+    margin-left: 100px;
+}
+.mpshopbtn{
+	pointer-events: initial;
+	text-transform: uppercase;
+	font-weight: 700;
+	margin: 40px 100px 120px;
+	color: #ffffff !important;
+	background-color: #A47F66 !important;
+	display: table;
+	cursor: pointer;
+	padding: 10px 30px;
+	text-decoration: none;
+}
+    
+.clearfix:after {
+	clear: both;
+}
+.clearfix:after, .clearfix:before {
+	content: '';
+	display: table;
+}
+.slideshow-container {
+	max-width: 1000px;
+	position: relative;
+	margin: auto;
+
+}
+.sec2img{
+	width:100%;
+	object-fit:cover;
+	height:50vh;
+	max-height: 400px;
+	filter: brightness(0.7);
+}
+/* Hide the images by default */
+.sec2slides {
+  display: none;
+}
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  text-decoration: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgb(0 0 0 / 19%);
+  color: white;
+}
+
+/* Caption text */
+.sec2slidetext {
+  color: #ffffff;
+  font-size: 30px;
+  font-weight: 600;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 110px;
+  width: 100%;
+  text-align: center;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 3.5s;
+  animation-name: fade;
+  animation-duration: 3.5s;
+  animation-timing-function: ease-in-out;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .8}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .8}
+  to {opacity: 1}
+}
+
+#bottomsection{
+	min-height: 5vh;
+}
+
+#carouselsec{
+	margin-top:50px;
+}
+
