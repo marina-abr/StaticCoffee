@@ -94,6 +94,17 @@
 					<input type="password" placeholder="Passwort wiederholen" class="form input" id="register-pwrep" name="pwrep" autocomplete="new-password" required="required" pattern="^[A-Za-z\d@$!%*?]{8,20}$" >
 					<div><span class="errormsg" id=repwmsg></span></div>
 				</div>
+
+				<div class="reg dropdown">
+					<select>
+						<option>Kunde</option>
+						<option>Tester</option>
+						<option>Admin</option>
+						<option>Händler</option>
+					</select>
+					
+				</div>
+
 				<div class="reg agbcheck">
 					<label>
 						<input type="checkbox" id="register-check" required="required" >Ja, ich habe die <a href="agb.html" target="_blank" rel="noopener noreferrer">AGB</a> gelesen und akzeptiere diese. 
