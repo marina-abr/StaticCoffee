@@ -11,10 +11,31 @@
 	<link rel="stylesheet" href="css/login.css">	<link rel="icon" type="image/x-icon"
 	href="img/coffee/icon.png">	
     <title>coffeeshop</title>
+
+
+	<script>   	
+		function displayLoginForm() {
+	 document.getElementById("loginentsperrt-overlay").style.display = "none";
+	 document.getElementById("overlay").style.display = "block";
+					 document.getElementById("login-username-msg").innerHTML = "";
+		 document.getElementById("login-password-msg").innerHTML = "";	
+		 document.getElementById("loginform").reset();
+				
+	}    
+	// When the user clicks anywhere outside of the modal, close it
+	window.onclick = function(event) {
+	if (event.target == document.getElementById("overlay")) {
+								document.getElementById("login-username-msg").innerHTML = "";
+				document.getElementById("login-password-msg").innerHTML = "";
+				document.getElementById("loginform").reset();
+						document.getElementById("overlay").style.display = "none";	
+	}
+	}
+	</script>
 </head>
 <body>
 	<header>
-
+		
 		<div>
  			<a href="index.html"><img id="headlogo" src="img/coffee/logo.png"></img></a> 
  		</div>
@@ -53,27 +74,9 @@
 		</div>
 	</div>
 
-	<script>   	
-		function displayLoginForm() {
-	 document.getElementById("loginentsperrt-overlay").style.display = "none";
-	 document.getElementById("overlay").style.display = "block";
-					 document.getElementById("login-username-msg").innerHTML = "";
-		 document.getElementById("login-password-msg").innerHTML = "";	
-		 document.getElementById("loginform").reset();
-			 
- }    
- // When the user clicks anywhere outside of the modal, close it
- window.onclick = function(event) {
-   if (event.target == document.getElementById("overlay")) {
-							 document.getElementById("login-username-msg").innerHTML = "";
-			 document.getElementById("login-password-msg").innerHTML = "";
-			 document.getElementById("loginform").reset();
-					 document.getElementById("overlay").style.display = "none";	
-   }
- }
-</script>
+
 	<div id="modal-register" class="modaldialog">
-		<div>
+		<div id="containerRegister">
 			<h2>Registrieren</h2>
 			<div class="errormsg"></div>
 			<form action="#" method="POST" name="form">
