@@ -75,7 +75,8 @@
 	<!-- Overlay für den modalen Dialog -->
 	<div id="overlay" class="modaldialog">
 		<div id="loginContainer">
-		<h2>Login</h2>    	<form id="loginform" method="post" action="http://10.40.226.38:8080/Coffeeshop/login.php">
+		<h2>Login</h2>    	
+		<form id="loginform" method="post" action="#">
 			<div class="login">
 				<div><input type="text" placeholder="Username" id="login-username" name="username" autocomplete="off"></div>
 				<div><span id="login-username-msg"></span></div>
@@ -88,8 +89,6 @@
 				<input id="login-submit" type="button" onClick="checkLoginPassword()" value="Login">
 			</div>
 		</form>
-							<div class="login">Noch kein Account? <a href="register.html">Anmelden</a></div>
-					
 		</div>
 	</div>
 
