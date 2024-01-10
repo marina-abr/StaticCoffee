@@ -24,25 +24,7 @@
   	
          
     <script src="js/login.js"></script>    
-    <script>   	
-   			function displayLoginForm() {
-			document.getElementById("loginentsperrt-overlay").style.display = "none";
-			document.getElementById("overlay").style.display = "block";
-							document.getElementById("login-username-msg").innerHTML = "";
-				document.getElementById("login-password-msg").innerHTML = "";	
-				document.getElementById("loginform").reset();
-					
-		}    
-		// When the user clicks anywhere outside of the modal, close it
-		window.onclick = function(event) {
-		  if (event.target == document.getElementById("overlay")) {
-		  	  			  	  document.getElementById("login-username-msg").innerHTML = "";
-			  	  document.getElementById("login-password-msg").innerHTML = "";
-			  	  document.getElementById("loginform").reset();
-			  			  document.getElementById("overlay").style.display = "none";	
-		  }
-		}
-	</script>
+    
  		<nav>
 			<a class="topnavigation" href="index.html">Home</a> 
 			<a class="topnavigation" href="about.html">About</a>		
@@ -71,7 +53,25 @@
 		</div>
 	</div>
 
-
+	<script>   	
+		function displayLoginForm() {
+	 document.getElementById("loginentsperrt-overlay").style.display = "none";
+	 document.getElementById("overlay").style.display = "block";
+					 document.getElementById("login-username-msg").innerHTML = "";
+		 document.getElementById("login-password-msg").innerHTML = "";	
+		 document.getElementById("loginform").reset();
+			 
+ }    
+ // When the user clicks anywhere outside of the modal, close it
+ window.onclick = function(event) {
+   if (event.target == document.getElementById("overlay")) {
+							 document.getElementById("login-username-msg").innerHTML = "";
+			 document.getElementById("login-password-msg").innerHTML = "";
+			 document.getElementById("loginform").reset();
+					 document.getElementById("overlay").style.display = "none";	
+   }
+ }
+</script>
 	<div id="modal-register" class="modaldialog">
 		<div>
 			<h2>Registrieren</h2>
