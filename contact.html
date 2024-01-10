@@ -1,0 +1,172 @@
+
+
+
+<!DOCTYPE html>
+<html style="font-size: 16px;">
+
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/coffeeshop.css">
+	<link rel="stylesheet" href="css/login.css">	<link rel="icon" type="image/x-icon"
+	href="img/coffee/icon.png">
+
+
+		
+    <title>coffeeshop</title>
+</head>
+<body>
+	<header>
+
+		<div>
+ 			<a href="index.html"><img id="headlogo" src="img/coffee/logo.png"></img></a> 
+ 		</div>
+
+	
+		 	<div id='accountbar'><a href='#' onClick='displayLoginForm()'>Login</a></div>
+  	<!-- Overlay für den modalen Dialog -->
+	<div id="overlay" class="modaldialog">
+    	<div id="loginContainer">
+    	<h2>Login</h2>    	<form id="loginform" method="post" action="http://10.40.226.38:8080/Coffeeshop/login.php">
+        	<div class="login">
+                <div><input type="text" placeholder="Username" id="login-username" name="username" autocomplete="off"></div>
+                <div><span id="login-username-msg"></span></div>
+            </div>
+            <div class="login">
+            	                	<input type="password" placeholder="Passwort" id="login-password" name="password" autocomplete="new-password">
+                                <div><span id="login-password-msg"></span></div>                
+            </div>
+            <div class="login">
+                <input id="login-submit" type="button" onClick="checkLoginPassword()" value="Login">
+            </div>
+        </form>
+       		        	   <div class="login">Noch kein Account? <a href="register.html">Anmelden</a></div>
+               		
+        </div>
+    </div>
+    
+    <div id="loginentsperrt-overlay" class="modaldialog">
+	    <div id="overlaysubmit">
+		    <h2>Dein Account wurde erfolgreich entsperrt.</h2>
+		    <button type="button" class="button" onclick="javascript:displayLoginForm()">Login</button>
+	    </div>
+	</div>
+         
+    <script src="js/login.js"></script>    
+    <script>   	
+   				function displayLoginForm() {
+			document.getElementById("loginentsperrt-overlay").style.display = "none";
+			document.getElementById("overlay").style.display = "block";
+							document.getElementById("login-username-msg").innerHTML = "";
+				document.getElementById("login-password-msg").innerHTML = "";	
+				document.getElementById("loginform").reset();
+					
+		}    
+		// When the user clicks anywhere outside of the modal, close it
+		window.onclick = function(event) {
+		  if (event.target == document.getElementById("overlay")) {
+		  	  			  	  document.getElementById("login-username-msg").innerHTML = "";
+			  	  document.getElementById("login-password-msg").innerHTML = "";
+			  	  document.getElementById("loginform").reset();
+			  			  document.getElementById("overlay").style.display = "none";	
+		  }
+		}
+	</script>
+ 		<nav>
+			<a class="topnavigation" href="index.html">Home</a> <a
+				class="topnavigation" href="about.html">About</a>
+    		<a class="topnavigation" href="shop.html">Shop</a>    		<a class="topnavigation" href="#footer">Contact</a>
+		</nav>
+	</header>
+
+	<content>	<link rel="stylesheet" href="css/coffee/about.css">
+
+	<div class="row">
+    	<div class="col" id="maincontent">
+            <div id="slider_row" class="row">
+                <div id="top_column" class="center_column col-xs-12 col-sm-12"></div>
+            </div>
+            <div class="row">
+                                                                <div id="center_column" class="center_column col-xs-12 col-sm-12">
+<h1 class="page-heading bottom-indent">
+Customer service - Contact us</h1>
+
+
+<form action="http://www.automationpractice.pl/index.php?controller=contact" method="post" class="contact-form-box" enctype="multipart/form-data">
+<fieldset>
+    <h3 class="page-subheading">send a message</h3>
+    <div class="clearfix">
+        <div class="col-xs-12 col-md-3">
+            <div class="form-group selector1">
+                <label for="id_contact">Subject Heading</label>
+                                    <div class="selector" id="uniform-id_contact" style="width: 266px;"><span style="width: 256px; user-select: none;">-- Choose --</span><select id="id_contact" class="form-control" name="id_contact">
+                    <option value="0">-- Choose --</option>
+                                                    <option value="2">Customer service</option>
+                                                    <option value="1">Webmaster</option>
+                                            </select></div>
+            </div>
+                <p id="desc_contact0" class="desc_contact">&nbsp;</p>
+                                            <p id="desc_contact2" class="desc_contact contact-title unvisible">
+                        <i class="icon-comment-alt"></i>For any question about a product, an order
+                    </p>
+                                            <p id="desc_contact1" class="desc_contact contact-title unvisible">
+                        <i class="icon-comment-alt"></i>If a technical problem occurs on this website
+                    </p>
+                                                        <p class="form-group">
+                <label for="email">Email address</label>
+                                            <input class="form-control grey validate" type="text" id="email" name="from" data-validate="isEmail" value="">
+                                    </p>
+                                                                <div class="form-group selector1">
+                        <label>Order reference</label>
+                                                            <input class="form-control grey" type="text" name="id_order" id="id_order" value="">
+                                                    </div>
+                                                                                                        <p class="form-group">
+                    <label for="fileUpload">Attach File</label>
+                    <input type="hidden" name="MAX_FILE_SIZE" value="268435456">
+                    <div class="uploader" id="uniform-fileUpload"><input type="file" name="fileUpload" id="fileUpload" class="form-control"><span class="filename" style="user-select: none;">No file selected</span><span class="action" style="user-select: none;">Choose File</span></div>
+                </p>
+                            </div>
+        <div class="col-xs-12 col-md-9">
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea class="form-control" id="message" name="message"></textarea>
+            </div>
+        </div>
+    </div>
+    <div class="submit">
+        <button type="submit" name="submitMessage" id="submitMessage" class="button btn btn-default button-medium"><span>Send<i class="icon-chevron-right right"></i></span></button>
+    </div>
+</fieldset>
+</form>
+
+
+            </div><!-- #center_column -->
+                                </div><!-- .row -->
+        </div><!-- #columns -->
+    </div><!-- .columns-container -->
+    	</div>
+	</div>
+	
+	
+	
+	</content>
+	<footer id="footer">
+	  <a id="linktop" onclick="window.scrollTo(0, 0);">&#708;</a>
+	  <div>
+	  	 <a href='agb.html'>AGB</a> 
+	  </div>
+	  <div id="contactdata">
+	  	<p>Finetest Coffee c/o Coffeeshop Inc.</p>
+	  	<p>Teststraße 123</p>
+	  	<p>12345 Testingen</p>
+	  	<p><a href="mailto:testshoptest0@gmail.com">finetest@coffee.inc</a></p>
+	  </div>
+			
+
+	  	  	</footer>
+  </body>
+
+
+</html>
+
