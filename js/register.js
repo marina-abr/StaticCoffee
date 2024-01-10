@@ -10,45 +10,46 @@ var featvar=document.getElementById("featvar").innerHTML;
 document.getElementById("featvar").innerHTML="";
 const dIndex=[defvar.slice(0,1), defvar.slice(1,2), defvar.slice(2,3)]; 
 
-if(featvar==1){
-	
-	document.addEventListener('invalid', (function () {
-  		return function (e) {
-	    	//Verhindert Validierungs Popups
-   			e.preventDefault();
-   			//Required Felder
-   			if(username.validity.valueMissing){
-				usrmsg_span.style.color = "red";
-   				document.getElementById("usrmsg").innerHTML="Bitte einen Nutzernamen eingeben";
-   			}
-   			if(password.validity.valueMissing){
-   				document.getElementById("pwmsg").innerHTML="Bitte ein Passwort eingeben";
-   			}
-   			if(agbcheck.validity.valueMissing){
-				document.getElementById("agbmsg").innerHTML="Bitte den AGB zustimmen";
-			}
-		};
-	})(), true);
-	
-	username.onkeyup = checkUsername;
 
-	if(dIndex[2] == 0){
-		password.onchange = validatePassword;
-		confirm_password.onkeyup = validatePassword;
+
+
+document.addEventListener('invalid', (function () {
+	return function (e) {
+		//Verhindert Validierungs Popups
+		e.preventDefault();
+		//Required Felder
+		if(username.validity.valueMissing){
+			usrmsg_span.style.color = "red";
+			document.getElementById("usrmsg").innerHTML="Bitte einen Nutzernamen eingeben";
+		}
+		if(password.validity.valueMissing){
+			document.getElementById("pwmsg").innerHTML="Bitte ein Passwort eingeben";
+		}
+		if(agbcheck.validity.valueMissing){
+			document.getElementById("agbmsg").innerHTML="Bitte den AGB zustimmen";
+		}
+	};
+})(), true);
+
+username.onkeyup = checkUsername;
+
+
+password.onchange = validatePassword;
+confirm_password.onkeyup = validatePassword;
+
+
+//Gibt eine Fehlermeldung am Eingabefeld aus, falls das eingabemuster für "password" nicht eingehalten wurde.
+password.addEventListener("input", function () {
+	if (password.validity.patternMismatch) {
+	password.setCustomValidity("8-20 Zeichen: a-z, A-Z, 0-9, @$!%*?");
+	document.getElementById("pwmsg").innerHTML="8-20 Zeichen: a-z, A-Z, 0-9, @$!%*?";
+	} else {
+	password.setCustomValidity("");
+	document.getElementById("pwmsg").innerHTML="";
 	}
-	
-	//Gibt eine Fehlermeldung am Eingabefeld aus, falls das eingabemuster für "password" nicht eingehalten wurde.
-	password.addEventListener("input", function () {
-	  if (password.validity.patternMismatch) {
-	    password.setCustomValidity("8-20 Zeichen: a-z, A-Z, 0-9, @$!%*?");
-	    document.getElementById("pwmsg").innerHTML="8-20 Zeichen: a-z, A-Z, 0-9, @$!%*?";
-	  } else {
-	    password.setCustomValidity("");
-	    document.getElementById("pwmsg").innerHTML="";
-	  }
-	});
+});
 
-}
+
 
 
 
@@ -78,28 +79,8 @@ function checkUsername(){
 				usrmsg_span.innerHTML = "Bitte einen gültigen Namen eingeben:<br>4-12 Zeichen: a-z, A-Z, 0-9, Umlaute";
 				username.setCustomValidity("4-12 Zeichen: a-z, A-Z, 0-9, Umlaute");
 			}else{
-			//Username wäre gültig -> Prüfüng geht an DB
-				var xmlhttp = new XMLHttpRequest();
-			    xmlhttp.onreadystatechange = function() {
-			      if (this.readyState == 4 && this.status == 200) {
-			       		if(this.responseText == 0){
-					   		usrmsg_span.innerHTML = "Dieser Name ist verfügbar";
-		       				usrmsg_span.style.color = "green";
-		       				username.setCustomValidity("");
-						}else{
-							if(dIndex[0]==1){
-								usrmsg_span.innerHTML = "Dieser Name ist verfügbar";
-		       					usrmsg_span.style.color = "green";
-							}else{
-								usrmsg_span.innerHTML = "Dieser Name ist schon vergeben.";
-								usrmsg_span.style.color = "red";
-							}
-	      					username.setCustomValidity("Bitte einen anderen Namen wählen.");
-						}
-			      }
-			    };
-			    xmlhttp.open("GET", "./ajax/register.async.php?q="+username.value,true);
-			    xmlhttp.send();
+			//Username wäre gültig 
+				registerSucess();
 			}
 		} 
 	}else{
@@ -114,4 +95,7 @@ function checkUsername(){
 	}
 }
 
+function registerSucess(){
+	document.getElementById("featvar").innerHTML="Success";
 
+}
