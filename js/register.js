@@ -4,6 +4,7 @@ var usrmsg_span=document.getElementById("usrmsg");
 var username = document.getElementById("register-username");
 var agbcheck = document.getElementById("register-check");
 var regform = document.getElementById("regform");
+var userlist=[];
 /*var defvar=document.getElementById("defvar").innerHTML;
 document.getElementById("defvar").innerHTML="";
 var featvar=document.getElementById("featvar").innerHTML;
@@ -99,7 +100,9 @@ function register(){
 		document.getElementById("successusrname").innerHTML=username.value;
 		document.getElementById("successpw").innerHTML=password.value;
 
-		
+		userlist = sessionStorage.getItem("Users")
+		userlist.push([username.value, password.value, "Tester"]);
+		console.log(sessionStorage.getItem("Users"));
 		
 	}
 	
