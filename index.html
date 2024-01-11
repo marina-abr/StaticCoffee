@@ -236,8 +236,9 @@
 	 <script>
 	 if(sessionStorage.getItem("LoggedIn") != null){
 		let usrinf = JSON.parse( sessionStorage.getItem("LoggedIn"))
-		document.getElementById("profileArea").innerHTML = "<div>" + usrinf[0] + " | " + usrinf[2] +"</div><div id='logout'><a href='#' onClick='sessionStorage.removeItem('LoggedIn')'>Logout</a></div>"
-	}</script>
+		document.getElementById("profileArea").innerHTML = "<div>" + usrinf[0] + " | " + usrinf[2] +"</div><div id='logout'><a href='#' onClick='sessionStorage.removeItem('LoggedIn')'>Logout</a></div>";
+		}
+	</script>
 
 
   </body>
