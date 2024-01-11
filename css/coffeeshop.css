@@ -47,7 +47,14 @@ footer {
     left: 98%;
     cursor:pointer;
 }
-#accountbar {
+#profileArea{
+	font-size: 18px;
+	position: absolute;
+ 	bottom: 13px;
+ 	margin-top: 30px;
+	right: 60px;
+}
+#accountbar{
 	font-size: 18px;
 	position: absolute;
  	bottom: 13px;
