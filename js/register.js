@@ -10,7 +10,7 @@ var featvar=document.getElementById("featvar").innerHTML;
 document.getElementById("featvar").innerHTML="";
 const dIndex=[defvar.slice(0,1), defvar.slice(1,2), defvar.slice(2,3)]; 
 */
-
+console.log(users[1][1])
 
 
 document.addEventListener('invalid', (function () {
