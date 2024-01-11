@@ -76,7 +76,8 @@ function checkUsername(){
 				username.setCustomValidity("4-12 Zeichen: a-z, A-Z, 0-9, Umlaute");
 			
 			}else{
-				username.setCustomValidity("");
+				username.setCustomValidity('');
+				usrmsg_span.innerHTML = "";
 			}
 		
 	}else{
