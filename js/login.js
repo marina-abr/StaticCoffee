@@ -47,7 +47,8 @@ function checkLoginPassword(){
 	//Überprüft das Passwort auf Gültigkeit
 	if(login_password.value == UserPW){
 		login_pwdmsg_span.innerHTML = "";
-		sessionStorage.setItem("LoggedIn", [login_username.value, login_password.value, UserRole] )
+		sessionStorage.setItem("LoggedIn", [login_username.value, login_password.value, UserRole]);
+		window.location.replace('index.html');
 	}else{
 		login_usrmsg_span.innerHTML = "";
 		login_pwdmsg_span.innerHTML = "Benutzername oder Passwort falsch";
