@@ -6,6 +6,7 @@ var login_submit = document.getElementById("login-submit");
 var loginform = document.getElementById("loginform");
 var ListUserData = JSON.parse(sessionStorage.getItem("Users"));
 var UserPW="";
+var UserRole="";
 
 login_username.addEventListener("focusout", checkLoginUsername);
 //loginform.addEventListener("submit", checkLoginPassword);
@@ -29,6 +30,7 @@ function checkLoginUsername(){
 		if(element[0] == login_username.value){
 			usrnameFound= true;
 			UserPW = element[1];
+			UserRole = element[2];
 		}
 	});
 	if(usrnameFound){
@@ -45,7 +47,7 @@ function checkLoginPassword(){
 	//Überprüft das Passwort auf Gültigkeit
 	if(login_password.value == UserPW){
 		login_pwdmsg_span.innerHTML = "";
-		loginform.submit();
+		sessionStorage.setItem("LoggedIn", [login_username.value, login_password.value, UserRole] )
 	}else{
 		login_usrmsg_span.innerHTML = "";
 		login_pwdmsg_span.innerHTML = "Benutzername oder Passwort falsch";
