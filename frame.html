@@ -1,17 +1,37 @@
 
-<html><head><script src=""></script></head><body contenteditable="false">
+<html>
+    <head>
+    </head>
+    <body contenteditable="false">
 
     <h1>Dieser Text ist innerhalb eines Iframe</h1>
-    <h2>Hier kann ein Alert ausgelöst werden</h2>
+    <h2>Hier können verschiedene Alerts ausgelöst werden</h2>
     
     <p>Klick auf den Button um den Alert auszulösen!</p>
     
-    <button onclick="myFunction()">Try it</button>
+    <button onclick="myAlert()">Klick mich</button>
+
+    <p>Klick auf den Button um den Alert auszulösen!</p>
+    
+    <button onclick="myConfirm()">Klick mich</button>
+
+    <p>Klick auf den Button um den Alert auszulösen!</p>
+    
+    <button onclick="myFunction()">Klick mich</button>
+    <span>Eingabe:</span><p id="promptresult"></p>
     
     <script>
-    function myFunction() {
-      alert("Hello! I am an alert box!");
+    function myAlert() {
+      alert("Hallo! Das ist ein Alert.");
     }
+    function myConfirm() {
+      confirm("Hallo! Das ist ein Confirm.");
+    }
+    function myPrompt() {
+      let prompttext = prompt("Hallo! Das ist ein Prompt.");
+      document.getElementById("promptresult").innerHTML = prompttext;
+    }
+
     </script>
     
     
