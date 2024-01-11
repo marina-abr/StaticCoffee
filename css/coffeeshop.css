@@ -59,14 +59,14 @@ footer {
 	position: absolute;
  	bottom: 13px;
  	margin-top: 30px;
-	right: 60px;
+	
 }
 #reglink {
 	font-size: 18px;
 	position: absolute;
  	bottom: 13px;
  	margin-top: 30px;
-	right: 120px;
+	right: 10px;
 }
 .topnavigation {
   font-size: 18px;
@@ -210,9 +210,16 @@ select {
 	}
 	#accountbar {
 		font-size: 16px;
-	 	bottom: 17px;
-		right: 20px;
+	 	bottom: 0px;
+		
 	}
+	#reglink{
+		font-size: 16px;
+		position: absolute;
+		bottom: 20px;
+		right: -39px;
+	}
+
 	#shoppingcart{
 		
 		width: 25px;
