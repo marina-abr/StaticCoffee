@@ -75,6 +75,8 @@ function checkUsername(){
 				usrmsg_span.innerHTML = "Bitte einen gültigen Namen eingeben:<br>4-12 Zeichen: a-z, A-Z, 0-9, Umlaute";
 				username.setCustomValidity("4-12 Zeichen: a-z, A-Z, 0-9, Umlaute");
 			
+			}else{
+				username.setCustomValidity("");
 			}
 		
 	}else{
