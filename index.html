@@ -16,7 +16,8 @@
 
 
 	<script>   	
-		var users = [["tester", "password"]];
+		var users = [["tester", "password", "Tester"]];
+		sessionStorage.setItem("Users", users);
 		function displayLoginForm() {
 	    	document.getElementById("overlay").style.display = "block";
 			document.getElementById("login-username-msg").innerHTML = "";

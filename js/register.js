@@ -10,7 +10,7 @@ var featvar=document.getElementById("featvar").innerHTML;
 document.getElementById("featvar").innerHTML="";
 const dIndex=[defvar.slice(0,1), defvar.slice(1,2), defvar.slice(2,3)]; 
 */
-console.log(users[0])
+
 
 
 document.addEventListener('invalid', (function () {
@@ -97,11 +97,10 @@ function register(){
 		document.getElementById("modal-register").style.display="None";
 		document.getElementById("register-overlay").style.display="Block";
 		document.getElementById("successusrname").innerHTML=username.value;
+		document.getElementById("successpw").innerHTML=password.value;
+
 		
-		sessionStorage.setItem("User", username.value)
-		sessionStorage.setItem("Password", username.value)
-		sessionStorage.setItem("Type", username.value)
-		console.log(sessionStorage.getItem("User"))
+		
 	}
 	
 
