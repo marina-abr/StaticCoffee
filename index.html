@@ -15,13 +15,19 @@
     <title>coffeeshop</title>
 
 
-	<script>   	
+	<script>  
 		var users = [["tester", "password", "Tester"],["admin", "admin", "Admin"]];
 		if(JSON.parse(sessionStorage.getItem("Users")) == null){
 			sessionStorage.setItem("Users", JSON.stringify(users));
 		}
 		console.log(JSON.parse(sessionStorage.getItem("Users")));
 		console.log(sessionStorage.getItem("LoggedIn"));
+
+		if(sessionStorage.getItem("LoggedIn") != null){
+			document.getElementById("profileArea").innerHTML = "<div>" + sessionStorage.getItem("LoggedIn")[1] + " | " + sessionStorage.getItem("LoggedIn")[3] +"</div>"
+		}
+
+
 
 
 		function displayLoginForm() {
@@ -64,10 +70,10 @@
  			<a href="index.html"><img id="headlogo" src="img/coffee/logo.png"></img></a> 
  		</div>
 		
-	
+		<div id="profileArea">
 		 	<div id='accountbar'><a href='#' onClick='displayLoginForm()'>Login</a></div>
 			<div id='reglink'><a href='#' onClick='displayRegForm()'>Registrieren</a></div>
-  	
+		</div>	
          
      
     
