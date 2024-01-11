@@ -17,9 +17,7 @@
 
 	<script>   	
 		var users = [["tester", "password", "Tester"],["admin", "admin", "Admin"]];
-		console.log(users);
 		sessionStorage.setItem("Users", JSON.stringify(users));
-		console.log(sessionStorage.getItem("Users"));
 		function displayLoginForm() {
 	    	document.getElementById("overlay").style.display = "block";
 			document.getElementById("login-username-msg").innerHTML = "";
@@ -115,7 +113,7 @@
 				</div>
 
 				<div class="reg dropdown">
-					<select>
+					<select id="register-role">
 						<option>Kunde</option>
 						<option>Tester</option>
 						<option>Admin</option>
@@ -140,7 +138,7 @@
 	
 	<div id="register-overlay" class="modaldialog">
 		<div id="overlaysubmit">
-			<div style="display:grid">
+			<div style="display:grid; padding: 15px;">
 				<h2>Deine Registrierung war erfolgreich!</h2>
 				<span id="successusrname"></span>
 				<span id="successpw"></span>

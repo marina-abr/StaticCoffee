@@ -4,6 +4,7 @@ var usrmsg_span=document.getElementById("usrmsg");
 var username = document.getElementById("register-username");
 var agbcheck = document.getElementById("register-check");
 var regform = document.getElementById("regform");
+var dropdownRole = document.getElementById("register-role");
 var userlist= Array("");
 /*var defvar=document.getElementById("defvar").innerHTML;
 document.getElementById("defvar").innerHTML="";
@@ -99,10 +100,10 @@ function register(){
 		document.getElementById("register-overlay").style.display="Block";
 		document.getElementById("successusrname").innerHTML=username.value;
 		document.getElementById("successpw").innerHTML=password.value;
-
+		document.getElementById("successtype").innerHTML=dropdownRole.options[dropdownRole.selectedIndex].text;
 		userlist = JSON.parse(sessionStorage.getItem("Users"));
 		console.log(userlist);
-		userlist.push([username.value, password.value, "Tester"]);
+		userlist.push([username.value, password.value, dropdownRole.options[dropdownRole.selectedIndex].text]);
 		
 		
 	}
