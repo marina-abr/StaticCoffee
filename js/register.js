@@ -104,7 +104,7 @@ function register(){
 		userlist = JSON.parse(sessionStorage.getItem("Users"));
 		console.log(userlist);
 		userlist.push([username.value, password.value, dropdownRole.options[dropdownRole.selectedIndex].text]);
-		
+		sessionStorage.setItem("Users", JSON.stringify(userlist))
 		
 	}
 	

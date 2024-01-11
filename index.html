@@ -17,7 +17,14 @@
 
 	<script>   	
 		var users = [["tester", "password", "Tester"],["admin", "admin", "Admin"]];
-		sessionStorage.setItem("Users", JSON.stringify(users));
+		console.log(users);
+		if(sessionStorage.getItem("Users") != ""){
+			sessionStorage.setItem("Users", JSON.stringify(users));
+		}
+		console.log(JSON.parse(sessionStorage.getItem("Users")));
+		
+
+
 		function displayLoginForm() {
 	    	document.getElementById("overlay").style.display = "block";
 			document.getElementById("login-username-msg").innerHTML = "";
