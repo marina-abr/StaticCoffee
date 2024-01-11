@@ -92,6 +92,6 @@ function checkUsername(){
 }
 
 function registerSucess(){
-	document.getElementById("featvar").innerHTML="Success";
+	document.getElementById("register-overlay").style.display="Block";
 
 }
