@@ -19,7 +19,7 @@
 		var users = [["tester", "password", "Tester"],["admin", "admin", "Admin"]];
 		console.log(users);
 		console.log(sessionStorage.getItem("Users"));
-		if(JSON.parse(sessionStorage.getItem("Users")).length != 2){
+		if(JSON.parse(sessionStorage.getItem("Users")).length = 0){
 			sessionStorage.setItem("Users", JSON.stringify(users));
 		}
 		console.log(JSON.parse(sessionStorage.getItem("Users")));
