@@ -100,7 +100,8 @@ function register(){
 		document.getElementById("successusrname").innerHTML=username.value;
 		document.getElementById("successpw").innerHTML=password.value;
 
-		userlist = sessionStorage.getItem("Users")
+		userlist = sessionStorage.getItem("Users");
+		console.log(userlist);
 		userlist.push([username.value, password.value, "Tester"]);
 		console.log(sessionStorage.getItem("Users"));
 		
