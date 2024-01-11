@@ -60,4 +60,8 @@ function checkLoginPassword(){
 
 } 
 
+function logout(){
+	sessionStorage.removeItem("LoggedIn");
+	window.location.replace('index.html');
+}
 
