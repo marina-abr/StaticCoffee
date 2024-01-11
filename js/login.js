@@ -22,11 +22,12 @@ function enter(e) {
 
 function checkLoginUsername(){
 	//Überprüft den Username auf Gültigkeit
+	const usrnameFound = false;
 
 	ListUserData = JSON.parse(sessionStorage.getItem("Users"));
 	ListUserData.forEach(element => {
 		if(element[0] == login_username.value){
-			const usrnameFound= true;
+			usrnameFound= true;
 			UserPW = element[1];
 		}
 	});
