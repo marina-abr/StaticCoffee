@@ -99,7 +99,9 @@ function register(){
 		document.getElementById("successusrname").innerHTML=username.value;
 		
 		sessionStorage.setItem("User", username.value)
-
+		sessionStorage.setItem("Password", username.value)
+		sessionStorage.setItem("Type", username.value)
+		console.log(sessionStorage.getItem("User"))
 	}
 	
 
