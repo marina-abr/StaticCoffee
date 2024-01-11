@@ -4,12 +4,12 @@ var usrmsg_span=document.getElementById("usrmsg");
 var username = document.getElementById("register-username");
 var agbcheck = document.getElementById("register-check");
 
-var defvar=document.getElementById("defvar").innerHTML;
+/*var defvar=document.getElementById("defvar").innerHTML;
 document.getElementById("defvar").innerHTML="";
 var featvar=document.getElementById("featvar").innerHTML;
 document.getElementById("featvar").innerHTML="";
 const dIndex=[defvar.slice(0,1), defvar.slice(1,2), defvar.slice(2,3)]; 
-
+*/
 
 
 
@@ -68,11 +68,7 @@ function checkUsername(){
 	//Überprüft den Username auf Gültigkeit und fragt falls gültig die DB an, ob der Name bereits vergeben ist.
 	
 	if(username.value.length > 3){
-		if(dIndex[1]==1 && username.value.length > 12){
-			usrmsg_span.style.color = "red";
-			usrmsg_span.innerHTML = "Bitte einen gültigen Namen eingeben:<br>4-12 Zeichen: a-z, A-Z, 0-9, Umlaute";
-			username.setCustomValidity("");
-		}else{
+		
 			if (username.validity.patternMismatch) {
 			//Username entspricht nicht den Vorgaben
 				usrmsg_span.style.color = "red";
@@ -82,7 +78,7 @@ function checkUsername(){
 			//Username wäre gültig 
 				registerSucess();
 			}
-		} 
+		
 	}else{
 	//username zu kurz
 		username.setCustomValidity("Bitte mindestens 4 Zeichen eingeben.");	
