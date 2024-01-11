@@ -23,9 +23,7 @@
 		console.log(JSON.parse(sessionStorage.getItem("Users")));
 		console.log(sessionStorage.getItem("LoggedIn"));
 
-		if(sessionStorage.getItem("LoggedIn") != null){
-			document.getElementById("profileArea").innerHTML = "<div>" + sessionStorage.getItem("LoggedIn")[1] + " | " + sessionStorage.getItem("LoggedIn")[3] +"</div>"
-		}
+		
 
 
 
@@ -234,6 +232,13 @@
 			
 
  	 </footer>
+
+	 <script>
+	 if(sessionStorage.getItem("LoggedIn") != null){
+		document.getElementById("profileArea").innerHTML = "<div>" + sessionStorage.getItem("LoggedIn")[1] + " | " + sessionStorage.getItem("LoggedIn")[3] +"</div>"
+	}</script>
+
+
   </body>
 
 </html>
