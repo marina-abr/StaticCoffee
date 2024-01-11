@@ -3,7 +3,7 @@ var confirm_password = document.getElementById("register-pwrep");
 var usrmsg_span=document.getElementById("usrmsg");
 var username = document.getElementById("register-username");
 var agbcheck = document.getElementById("register-check");
-
+var regform = document.getElementById("regform");
 /*var defvar=document.getElementById("defvar").innerHTML;
 document.getElementById("defvar").innerHTML="";
 var featvar=document.getElementById("featvar").innerHTML;
@@ -74,9 +74,7 @@ function checkUsername(){
 				usrmsg_span.style.color = "red";
 				usrmsg_span.innerHTML = "Bitte einen gültigen Namen eingeben:<br>4-12 Zeichen: a-z, A-Z, 0-9, Umlaute";
 				username.setCustomValidity("4-12 Zeichen: a-z, A-Z, 0-9, Umlaute");
-			}else{
-			//Username wäre gültig 
-				registerSucess();
+			
 			}
 		
 	}else{
@@ -91,7 +89,12 @@ function checkUsername(){
 	}
 }
 
-function registerSucess(){
-	document.getElementById("register-overlay").style.display="Block";
+function register(){
+	if(regform.reportValidity()){
+		document.getElementById("modal-register").style.display="None";
+		document.getElementById("register-overlay").style.display="Block";
+
+	}
+	
 
 }
