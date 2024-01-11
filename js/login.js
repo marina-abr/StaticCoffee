@@ -22,7 +22,7 @@ function enter(e) {
 
 function checkLoginUsername(){
 	//Überprüft den Username auf Gültigkeit
-	const usrnameFound = false;
+	let usrnameFound = false;
 
 	ListUserData = JSON.parse(sessionStorage.getItem("Users"));
 	ListUserData.forEach(element => {
