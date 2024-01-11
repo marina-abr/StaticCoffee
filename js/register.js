@@ -96,6 +96,9 @@ function register(){
 	if(regform.reportValidity()){
 		document.getElementById("modal-register").style.display="None";
 		document.getElementById("register-overlay").style.display="Block";
+		document.getElementById("successusrname").innerHTML=username.value;
+		
+		sessionStorage.setItem("User", username.value)
 
 	}
 	
